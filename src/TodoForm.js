@@ -1,3 +1,4 @@
+import { clear } from "@testing-library/user-event/dist/clear";
 import React, { useState } from "react";
 
 function TodoForm(props) {
@@ -13,17 +14,18 @@ function TodoForm(props) {
         event.preventDefault();
         if(text){
             props.onAddItem(text);
-            setText("");
+            setText('');
+            let x = document.querySelector('#info');
+            x.value = '';
         }
-        
     }
 
     return(
         <form id="form">
                 <input id="info" type="text" 
                 placeholder="Digite a tarefa"
-                onChange={handleChange}
-                value={props.text}>
+                value={props.text}
+                onChange={handleChange}>
                 </input>
                 <button id="add" onClick={handleClick}>Add</button>
             </form>

@@ -47,10 +47,25 @@
     border-radius: 4px;
     color: #fff;
     background-color: black;
+    cursor: pointer;
 }
 
 .container ul {
     list-style: none;
-    display: flex;
-    flex-direction: column;
+    width: 40vw;
+    position: relative;
+}
+
+.container ul li button {
+    margin-top: 6px;
+    border: none;
+    background-color: bisque;
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+}
+
+.container ul li button img {
+    width: 0.62rem;
+    height: 0.65rem;
 }
