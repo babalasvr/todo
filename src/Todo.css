@@ -19,13 +19,15 @@
     margin: auto;
     background: bisque;
     border-radius: 10px;
+    max-width: 248px;
+    box-shadow: 0 2.5px 7px 2px #000000;
 }
 
 .container h1{
     text-transform: uppercase;
     letter-spacing: 4px;
     color: rgb(100, 98, 98);
-    text-shadow: 2px 2px 2px #000000;
+    text-shadow: 2px 3px 2px #000000;
 }
 
 #form {
@@ -54,6 +56,7 @@
     list-style: none;
     width: 40vw;
     position: relative;
+    max-width: 225px;
 }
 
 .container ul li button {
@@ -65,7 +68,22 @@
     right: 0;
 }
 
+.container ul li input {
+    margin-top: 6px;
+    cursor: pointer;
+    position: absolute;
+    right: 11px;
+}
+
 .container ul li button img {
-    width: 0.62rem;
-    height: 0.65rem;
+    width: 0.63rem;
+    height: 0.68rem;
+}
+
+.checked {
+    text-decoration: line-through;
+}
+
+.unChecked {
+    text-decoration: none;
 }

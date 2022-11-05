@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import List from "./List";
-import TodoForm from "./TodoForm";
-import Item from "./Item"
+import List from "./components/List";
+import TodoForm from "./components/TodoForm";
+import Item from "./components/Item"
 import './Todo.css';
 
 function Todo() {
@@ -14,15 +14,29 @@ function Todo() {
     }
 
     function onItemDeleted(item) {
-        let filteredItems = items.filter(it => it.id != item.id)
+        let filteredItems = items.filter(it => it.id !== item.id)
         setItems(filteredItems)
+    }
+
+    const [style, setStyle] = useState("");
+
+    function onChecked() {
+        let checkbox = document.getElementById('marcou');
+        // let x = items.filter(it => it.id !== item.id)
+        // console.log(x);
+        if(!checkbox.checked){
+            setStyle("unChecked");
+        }
+        else{
+            setStyle("checked");
+        }  
     }
 
     return (
         <div className="container">
             <h1>To-do list</h1>
             <TodoForm onAddItem={onAddItem}></TodoForm>
-            <List onItemDeleted={onItemDeleted} items={items}></List>
+            <List className={style} onChecked={onChecked} onItemDeleted={onItemDeleted} items={items}></List>
         </div>
         
     )
